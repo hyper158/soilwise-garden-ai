@@ -51,7 +51,7 @@ const Community = () => {
                 <Calendar className="h-4 w-4" />
                 Events
               </TabsTrigger>
-            </Tabs>
+            </TabsList>
             
             <TabsContent value="ai-assistant" className="pt-6">
               <div className="grid gap-8 md:grid-cols-3">

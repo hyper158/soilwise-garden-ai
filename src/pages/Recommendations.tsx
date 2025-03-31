@@ -107,7 +107,7 @@ const Recommendations = () => {
                 <Droplet className="h-4 w-4" />
                 Irrigation
               </TabsTrigger>
-            </Tabs>
+            </TabsList>
             
             <TabsContent value="crops" className="pt-6">
               {/* Filters */}
