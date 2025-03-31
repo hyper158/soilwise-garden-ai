@@ -3,7 +3,7 @@ import React from 'react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { InfoIcon, ThermometerIcon, DropletIcon, SunIcon, SeedlingIcon } from 'lucide-react';
+import { InfoIcon, ThermometerIcon, DropletIcon, SunIcon, Sprout } from 'lucide-react';
 
 interface CropRecommendationProps {
   name: string;
@@ -78,7 +78,7 @@ const CropRecommendationCard = ({
       
       <CardHeader className="pb-2">
         <CardTitle className="flex items-center gap-2 text-xl">
-          <SeedlingIcon className="h-5 w-5 text-soil-green" />
+          <Sprout className="h-5 w-5 text-soil-green" />
           {name}
         </CardTitle>
       </CardHeader>

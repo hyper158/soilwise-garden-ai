@@ -5,8 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { 
-  Seedling,
-  Beaker,
+  Sprout, 
+  Beaker, 
   Droplet,
   Filter, 
   SlidersHorizontal, 
@@ -95,7 +95,7 @@ const Recommendations = () => {
           <Tabs defaultValue="crops">
             <TabsList className="w-full max-w-md">
               <TabsTrigger value="crops" className="flex items-center gap-2">
-                <Seedling className="h-4 w-4" />
+                <Sprout className="h-4 w-4" />
                 Crops
               </TabsTrigger>
               <TabsTrigger value="fertilizers" className="flex items-center gap-2">
