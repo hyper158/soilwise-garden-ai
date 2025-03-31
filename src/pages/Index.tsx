@@ -8,28 +8,28 @@ import RecommendationsCard from '@/components/dashboard/RecommendationsCard';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { 
-  Plant, 
+  Leaf, 
   Droplet, 
   Bell, 
   BarChart, 
   ChevronRight,
   Thermometer,
-  Flask
+  Beaker
 } from 'lucide-react';
 
 const mockRecommendations = [
   {
-    type: 'crop',
+    type: 'crop' as const,
     title: 'Tomatoes',
     description: 'Ideal match for your soil pH and nutrient profile.'
   },
   {
-    type: 'fertilizer',
+    type: 'fertilizer' as const,
     title: 'Add Composted Manure',
     description: 'To improve soil structure and boost nitrogen levels.'
   },
   {
-    type: 'irrigation',
+    type: 'irrigation' as const,
     title: 'Reduce Watering Frequency',
     description: 'Current moisture levels are higher than optimal.'
   }
@@ -45,7 +45,7 @@ const Dashboard = () => {
           {/* Hero Section */}
           <section className="text-center space-y-4">
             <div className="inline-flex items-center justify-center p-2 bg-green-100 rounded-full text-soil-green mb-4">
-              <Plant className="h-6 w-6 mr-2" />
+              <Leaf className="h-6 w-6 mr-2" />
               <span className="font-medium">AI-Powered Soil Analysis</span>
             </div>
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
@@ -58,7 +58,7 @@ const Dashboard = () => {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Button size="lg" className="gap-2">
-                <Flask className="h-5 w-5" />
+                <Beaker className="h-5 w-5" />
                 Analyze Your Soil
               </Button>
               <Button size="lg" variant="outline" className="gap-2">

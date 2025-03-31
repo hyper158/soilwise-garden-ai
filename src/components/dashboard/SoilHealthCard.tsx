@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Progress } from "@/components/ui/progress";
-import { Thermometer, Droplet, Flask } from "lucide-react";
+import { Thermometer, Droplet, Beaker } from "lucide-react";
 
 interface SoilHealthCardProps {
   title: string;
@@ -43,7 +43,7 @@ const SoilHealthCard = ({
       case 'temperature':
         return <Thermometer className="h-6 w-6 text-soil-brown" />;
       case 'ph':
-        return <Flask className="h-6 w-6 text-soil-green" />;
+        return <Beaker className="h-6 w-6 text-soil-green" />;
       default:
         return <Droplet className="h-6 w-6" />;
     }
@@ -71,8 +71,7 @@ const SoilHealthCard = ({
       
       <Progress 
         value={normalizedValue} 
-        className="h-2 mt-2" 
-        indicatorClassName={progressColors[status]} 
+        className={`h-2 mt-2 ${progressColors[status]}`}
       />
       
       <div className="flex justify-between text-xs text-muted-foreground">

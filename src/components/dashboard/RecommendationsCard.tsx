@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from '@/components/ui/button';
-import { ChevronRight, Sparkles, FlowerIcon, Flask } from 'lucide-react';
+import { ChevronRight, Sparkles, Flower, Beaker } from 'lucide-react';
 
 interface Recommendation {
   type: 'crop' | 'fertilizer' | 'irrigation';
@@ -19,9 +19,9 @@ const RecommendationsCard = ({ recommendations }: RecommendationsCardProps) => {
   const renderIcon = (type: 'crop' | 'fertilizer' | 'irrigation') => {
     switch (type) {
       case 'crop':
-        return <FlowerIcon className="h-5 w-5 text-soil-green" />;
+        return <Flower className="h-5 w-5 text-soil-green" />;
       case 'fertilizer':
-        return <Flask className="h-5 w-5 text-soil-brown" />;
+        return <Beaker className="h-5 w-5 text-soil-brown" />;
       case 'irrigation':
         return <Sparkles className="h-5 w-5 text-soil-blue" />;
       default:

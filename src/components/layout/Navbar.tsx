@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Plant, Droplets, Leaf, Menu } from "lucide-react";
+import { Leaf, Droplets, Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const Navbar = () => {
@@ -10,7 +10,7 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-background/90 backdrop-blur">
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2 font-bold text-xl">
-          <Plant className="h-6 w-6 text-soil-green" />
+          <Leaf className="h-6 w-6 text-soil-green" />
           <span className="hidden sm:inline">SoilWise</span>
           <span className="text-soil-green sm:hidden">SW</span>
         </Link>
@@ -47,7 +47,7 @@ const Navbar = () => {
             <SheetContent side="right">
               <div className="grid gap-6 py-6">
                 <Link to="/" className="flex items-center gap-2 font-bold text-xl">
-                  <Plant className="h-6 w-6 text-soil-green" />
+                  <Leaf className="h-6 w-6 text-soil-green" />
                   <span>SoilWise</span>
                 </Link>
                 <nav className="grid gap-4">

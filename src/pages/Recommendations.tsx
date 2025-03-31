@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '@/components/layout/Navbar';
 import CropRecommendationCard from '@/components/recommendations/CropRecommendationCard';
@@ -6,8 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { 
-  SeedlingIcon, 
-  Flask, 
+  Seedling,
+  Beaker,
   Droplet,
   Filter, 
   SlidersHorizontal, 
@@ -96,11 +95,11 @@ const Recommendations = () => {
           <Tabs defaultValue="crops">
             <TabsList className="w-full max-w-md">
               <TabsTrigger value="crops" className="flex items-center gap-2">
-                <SeedlingIcon className="h-4 w-4" />
+                <Seedling className="h-4 w-4" />
                 Crops
               </TabsTrigger>
               <TabsTrigger value="fertilizers" className="flex items-center gap-2">
-                <Flask className="h-4 w-4" />
+                <Beaker className="h-4 w-4" />
                 Fertilizers
               </TabsTrigger>
               <TabsTrigger value="irrigation" className="flex items-center gap-2">
@@ -157,7 +156,7 @@ const Recommendations = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Flask className="h-5 w-5 text-soil-brown" />
+                    <Beaker className="h-5 w-5 text-soil-brown" />
                     Fertilizer Recommendations
                   </CardTitle>
                 </CardHeader>
@@ -166,7 +165,7 @@ const Recommendations = () => {
                     <div className="p-4 border rounded-lg bg-muted/50">
                       <div className="flex items-start gap-4">
                         <div className="soil-icon-bg">
-                          <Flask className="h-5 w-5 text-soil-brown" />
+                          <Beaker className="h-5 w-5 text-soil-brown" />
                         </div>
                         <div>
                           <h3 className="font-medium">Nitrogen-Rich Compost</h3>
@@ -194,7 +193,7 @@ const Recommendations = () => {
                     <div className="p-4 border rounded-lg bg-muted/50">
                       <div className="flex items-start gap-4">
                         <div className="soil-icon-bg">
-                          <Flask className="h-5 w-5 text-soil-brown" />
+                          <Beaker className="h-5 w-5 text-soil-brown" />
                         </div>
                         <div>
                           <h3 className="font-medium">Bone Meal</h3>
@@ -222,7 +221,7 @@ const Recommendations = () => {
                     <div className="p-4 border rounded-lg bg-muted/50">
                       <div className="flex items-start gap-4">
                         <div className="soil-icon-bg">
-                          <Flask className="h-5 w-5 text-soil-brown" />
+                          <Beaker className="h-5 w-5 text-soil-brown" />
                         </div>
                         <div>
                           <h3 className="font-medium">Dolomite Lime</h3>
