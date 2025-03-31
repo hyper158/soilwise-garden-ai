@@ -5,83 +5,77 @@
 
 @layer base {
   :root {
-    --background: 120 25% 98%;
-    --foreground: 120 10% 15%;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 120 10% 15%;
+    --card-foreground: 240 10% 3.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 120 10% 15%;
+    --popover-foreground: 240 10% 3.9%;
 
-    --primary: 142 48% 32%;
-    --primary-foreground: 142 40% 98%;
+    --primary: 142.1 76.2% 36.3%;
+    --primary-foreground: 355.7 100% 97.3%;
 
-    --secondary: 30 50% 70%;
-    --secondary-foreground: 30 35% 15%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
 
-    --muted: 120 5% 96%;
-    --muted-foreground: 120 5% 40%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
 
-    --accent: 210 50% 60%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 120 10% 90%;
-    --input: 120 10% 90%;
-    --ring: 142 48% 32%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 142.1 76.2% 36.3%;
 
     --radius: 0.5rem;
-
-    --sidebar-background: 142 50% 98%;
-    --sidebar-foreground: 142 10% 20%;
-    --sidebar-primary: 142 48% 32%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 142 30% 92%;
-    --sidebar-accent-foreground: 142 48% 32%;
-    --sidebar-border: 142 20% 90%;
-    --sidebar-ring: 142 48% 32%;
+    
+    /* SoilWise custom colors */
+    --soil-green: 142.1 76.2% 36.3%;
+    --soil-brown: 25 70% 40%;
+    --soil-blue: 210 80% 50%;
+    --soil-blue-dark: 210 80% 40%;
   }
 
   .dark {
-    --background: 120 15% 12%;
-    --foreground: 120 10% 90%;
+    --background: 20 14.3% 4.1%;
+    --foreground: 0 0% 95%;
 
-    --card: 120 15% 15%;
-    --card-foreground: 120 10% 90%;
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 120 15% 15%;
-    --popover-foreground: 120 10% 90%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 142 55% 40%;
-    --primary-foreground: 142 40% 98%;
+    --primary: 142.1 70.6% 45.3%;
+    --primary-foreground: 144.9 80.4% 10%;
 
-    --secondary: 30 40% 30%;
-    --secondary-foreground: 30 40% 90%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 120 10% 20%;
-    --muted-foreground: 120 10% 60%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
 
-    --accent: 210 50% 45%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 62% 40%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
 
-    --border: 120 10% 20%;
-    --input: 120 10% 20%;
-    --ring: 142 55% 40%;
-
-    --sidebar-background: 142 25% 15%;
-    --sidebar-foreground: 142 10% 90%;
-    --sidebar-primary: 142 55% 40%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 142 20% 25%;
-    --sidebar-accent-foreground: 142 10% 90%;
-    --sidebar-border: 142 20% 25%;
-    --sidebar-ring: 142 55% 40%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142.4 71.8% 29.2%;
+    
+    /* SoilWise custom colors - dark mode */
+    --soil-green: 142.1 70.6% 45.3%;
+    --soil-brown: 25 65% 50%;
+    --soil-blue: 210 70% 60%;
+    --soil-blue-dark: 210 70% 50%;
   }
 }
 
@@ -89,26 +83,52 @@
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
   }
 }
 
+/* Custom components */
 @layer components {
-  .soil-gradient {
-    @apply bg-gradient-to-br from-soil-green-light via-soil-green to-soil-green-dark;
-  }
-  
-  .soil-card {
-    @apply rounded-xl border bg-card p-6 shadow-sm transition-all hover:shadow-md;
-  }
-  
   .soil-dashboard-card {
-    @apply soil-card flex flex-col space-y-2;
+    @apply rounded-lg border bg-card p-4 shadow-sm transition-all hover:shadow-md;
   }
   
   .soil-icon-bg {
-    @apply flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary;
+    @apply flex h-9 w-9 items-center justify-center rounded-full bg-primary/10;
   }
+}
+
+/* Custom text colors */
+.text-soil-green {
+  color: hsl(var(--soil-green));
+}
+
+.text-soil-brown {
+  color: hsl(var(--soil-brown));
+}
+
+.text-soil-blue {
+  color: hsl(var(--soil-blue));
+}
+
+.text-soil-blue-dark {
+  color: hsl(var(--soil-blue-dark));
+}
+
+/* Custom bg colors */
+.bg-soil-green {
+  background-color: hsl(var(--soil-green));
+}
+
+.bg-soil-brown {
+  background-color: hsl(var(--soil-brown));
+}
+
+.bg-soil-blue {
+  background-color: hsl(var(--soil-blue));
+}
+
+.bg-soil-blue-dark {
+  background-color: hsl(var(--soil-blue-dark));
 }

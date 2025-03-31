@@ -13,7 +13,7 @@ import {
   CardTitle 
 } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Droplet, Upload, FlaskConical } from 'lucide-react';
+import { Droplet, Upload, Beaker } from 'lucide-react';
 import { toast } from 'sonner';
 
 const SoilDataForm = () => {
@@ -69,7 +69,7 @@ const SoilDataForm = () => {
         <Tabs defaultValue="manual">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="manual" className="flex items-center gap-2">
-              <FlaskConical className="h-4 w-4" />
+              <Beaker className="h-4 w-4" />
               Manual Entry
             </TabsTrigger>
             <TabsTrigger value="image" className="flex items-center gap-2">

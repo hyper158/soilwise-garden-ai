@@ -3,7 +3,7 @@ import React from 'react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { InfoIcon, ThermometerIcon, DropletIcon, SunIcon, Sprout } from 'lucide-react';
+import { Info, Thermometer, Droplet, Sun, Sprout } from 'lucide-react';
 
 interface CropRecommendationProps {
   name: string;
@@ -94,7 +94,7 @@ const CropRecommendationCard = ({
           
           <div className="grid grid-cols-2 gap-2">
             <div className="flex items-center gap-2">
-              <DropletIcon className="h-4 w-4 text-soil-blue" />
+              <Droplet className="h-4 w-4 text-soil-blue" />
               <span className="text-sm">
                 <Badge className={waterColors[waterRequirement]}>
                   {waterRequirement.charAt(0).toUpperCase() + waterRequirement.slice(1)} water
@@ -103,12 +103,12 @@ const CropRecommendationCard = ({
             </div>
             
             <div className="flex items-center gap-2">
-              <ThermometerIcon className="h-4 w-4 text-soil-brown" />
+              <Thermometer className="h-4 w-4 text-soil-brown" />
               <span className="text-sm">{idealTemperature}</span>
             </div>
             
             <div className="flex items-center gap-2">
-              <SunIcon className="h-4 w-4 text-amber-500" />
+              <Sun className="h-4 w-4 text-amber-500" />
               <span className="text-sm">
                 <Badge className={sunlightColors[sunlight]}>
                   {sunlight.charAt(0).toUpperCase() + sunlight.slice(1)} sun
@@ -117,7 +117,7 @@ const CropRecommendationCard = ({
             </div>
             
             <div className="flex items-center gap-2">
-              <InfoIcon className="h-4 w-4 text-muted-foreground" />
+              <Info className="h-4 w-4 text-muted-foreground" />
               <span className="text-sm">{growthPeriod}</span>
             </div>
           </div>

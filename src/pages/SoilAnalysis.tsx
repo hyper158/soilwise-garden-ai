@@ -4,14 +4,7 @@ import Navbar from '@/components/layout/Navbar';
 import SoilDataForm from '@/components/soil-analysis/SoilDataForm';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { 
-  BarChart3, 
-  FileBarChart, 
-  History, 
-  LineChart, 
-  FlaskConical, 
-  Leaf 
-} from 'lucide-react';
+import { Beaker, History, Droplet, FileText, PieChart } from 'lucide-react';
 
 const SoilAnalysis = () => {
   return (
@@ -24,184 +17,140 @@ const SoilAnalysis = () => {
           <div className="space-y-2">
             <h1 className="text-3xl font-bold tracking-tight">Soil Analysis</h1>
             <p className="text-muted-foreground">
-              Enter soil data manually or upload images for AI-powered analysis
+              Test your soil composition and get detailed reports on its health
             </p>
           </div>
           
-          {/* Main Content */}
-          <div className="grid gap-8 md:grid-cols-3">
-            {/* Left Column: Input Form */}
-            <div className="md:col-span-2">
-              <SoilDataForm />
-            </div>
+          {/* Analysis Options */}
+          <Tabs defaultValue="input">
+            <TabsList className="w-full max-w-md">
+              <TabsTrigger value="input" className="flex items-center gap-2">
+                <Beaker className="h-4 w-4" />
+                Input Data
+              </TabsTrigger>
+              <TabsTrigger value="results" className="flex items-center gap-2">
+                <PieChart className="h-4 w-4" />
+                Results
+              </TabsTrigger>
+              <TabsTrigger value="history" className="flex items-center gap-2">
+                <History className="h-4 w-4" />
+                History
+              </TabsTrigger>
+            </TabsList>
             
-            {/* Right Column: Information */}
-            <div className="flex flex-col gap-6">
-              <Card>
-                <CardHeader className="pb-2">
-                  <CardTitle className="flex items-center gap-2 text-lg">
-                    <FlaskConical className="h-5 w-5 text-primary" />
-                    How It Works
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4 text-sm">
-                    <div className="flex gap-2">
-                      <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs text-primary-foreground">
-                        1
+            <TabsContent value="input" className="pt-6">
+              <div className="grid gap-6 md:grid-cols-3">
+                <div className="md:col-span-2">
+                  <SoilDataForm />
+                </div>
+                
+                <div className="space-y-6">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="flex items-center gap-2">
+                        <FileText className="h-5 w-5 text-primary" />
+                        Analysis Process
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <div className="flex gap-2">
+                        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-medium text-primary-foreground">
+                          1
+                        </div>
+                        <div>
+                          <p className="font-medium">Input Soil Data</p>
+                          <p className="text-sm text-muted-foreground">
+                            Enter your soil test results or upload images for AI analysis
+                          </p>
+                        </div>
                       </div>
-                      <p>Enter soil test results manually or upload soil images</p>
-                    </div>
-                    <div className="flex gap-2">
-                      <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs text-primary-foreground">
-                        2
+                      
+                      <div className="flex gap-2">
+                        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-medium text-primary-foreground">
+                          2
+                        </div>
+                        <div>
+                          <p className="font-medium">AI Processing</p>
+                          <p className="text-sm text-muted-foreground">
+                            Our AI analyzes your data and compares it with optimal ranges
+                          </p>
+                        </div>
                       </div>
-                      <p>Our AI analyzes your data using advanced models</p>
-                    </div>
-                    <div className="flex gap-2">
-                      <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs text-primary-foreground">
-                        3
+                      
+                      <div className="flex gap-2">
+                        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-medium text-primary-foreground">
+                          3
+                        </div>
+                        <div>
+                          <p className="font-medium">Get Detailed Results</p>
+                          <p className="text-sm text-muted-foreground">
+                            Receive comprehensive soil health report and recommendations
+                          </p>
+                        </div>
                       </div>
-                      <p>Get personalized soil health insights and recommendations</p>
-                    </div>
-                    <div className="flex gap-2">
-                      <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs text-primary-foreground">
-                        4
-                      </div>
-                      <p>Track your soil health progress over time</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-              
-              <Card>
-                <CardHeader className="pb-2">
-                  <CardTitle className="flex items-center gap-2 text-lg">
-                    <Leaf className="h-5 w-5 text-soil-green" />
-                    Optimal Ranges
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3 text-sm">
-                    <div className="flex justify-between">
-                      <span>pH Level:</span>
-                      <span className="font-medium">6.0 - 7.0</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Nitrogen (N):</span>
-                      <span className="font-medium">40 - 80 mg/kg</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Phosphorus (P):</span>
-                      <span className="font-medium">25 - 50 mg/kg</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Potassium (K):</span>
-                      <span className="font-medium">40 - 80 mg/kg</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Moisture:</span>
-                      <span className="font-medium">30% - 60%</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Temperature:</span>
-                      <span className="font-medium">18°C - 24°C</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-          
-          {/* Results Section */}
-          <section className="space-y-6">
-            <h2 className="text-2xl font-semibold">Analysis Results</h2>
+                    </CardContent>
+                  </Card>
+                  
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="flex items-center gap-2">
+                        <Droplet className="h-5 w-5 text-soil-blue" />
+                        Soil Testing Tips
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-2 text-sm">
+                        <li className="flex gap-2">
+                          <span className="text-primary">•</span>
+                          <span>Test soil when it's neither too wet nor too dry</span>
+                        </li>
+                        <li className="flex gap-2">
+                          <span className="text-primary">•</span>
+                          <span>Take samples from multiple locations in your garden</span>
+                        </li>
+                        <li className="flex gap-2">
+                          <span className="text-primary">•</span>
+                          <span>Sample at root depth (usually 4-6 inches deep)</span>
+                        </li>
+                        <li className="flex gap-2">
+                          <span className="text-primary">•</span>
+                          <span>For container gardens, sample from the middle of the pot</span>
+                        </li>
+                        <li className="flex gap-2">
+                          <span className="text-primary">•</span>
+                          <span>Allow soil to dry before packaging for lab tests</span>
+                        </li>
+                        <li className="flex gap-2">
+                          <span className="text-primary">•</span>
+                          <span>Test at the same time each year for consistent results</span>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            </TabsContent>
             
-            <Tabs defaultValue="current">
-              <TabsList>
-                <TabsTrigger value="current" className="flex items-center gap-2">
-                  <BarChart3 className="h-4 w-4" />
-                  Current Analysis
-                </TabsTrigger>
-                <TabsTrigger value="history" className="flex items-center gap-2">
-                  <History className="h-4 w-4" />
-                  Historical Data
-                </TabsTrigger>
-                <TabsTrigger value="trends" className="flex items-center gap-2">
-                  <LineChart className="h-4 w-4" />
-                  Trends
-                </TabsTrigger>
-                <TabsTrigger value="reports" className="flex items-center gap-2">
-                  <FileBarChart className="h-4 w-4" />
-                  Reports
-                </TabsTrigger>
-              </TabsList>
-              
-              <TabsContent value="current" className="py-6">
-                <Card>
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-center h-64 border-2 border-dashed rounded-md">
-                      <div className="text-center">
-                        <BarChart3 className="h-10 w-10 mx-auto text-muted-foreground" />
-                        <h3 className="mt-2 font-medium">No Current Analysis</h3>
-                        <p className="text-sm text-muted-foreground">
-                          Submit soil data to see your analysis results
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-              
-              <TabsContent value="history" className="py-6">
-                <Card>
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-center h-64 border-2 border-dashed rounded-md">
-                      <div className="text-center">
-                        <History className="h-10 w-10 mx-auto text-muted-foreground" />
-                        <h3 className="mt-2 font-medium">No Historical Data</h3>
-                        <p className="text-sm text-muted-foreground">
-                          Your historical soil data will appear here
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-              
-              <TabsContent value="trends" className="py-6">
-                <Card>
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-center h-64 border-2 border-dashed rounded-md">
-                      <div className="text-center">
-                        <LineChart className="h-10 w-10 mx-auto text-muted-foreground" />
-                        <h3 className="mt-2 font-medium">No Trend Data</h3>
-                        <p className="text-sm text-muted-foreground">
-                          Soil health trends will be displayed here
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-              
-              <TabsContent value="reports" className="py-6">
-                <Card>
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-center h-64 border-2 border-dashed rounded-md">
-                      <div className="text-center">
-                        <FileBarChart className="h-10 w-10 mx-auto text-muted-foreground" />
-                        <h3 className="mt-2 font-medium">No Reports Generated</h3>
-                        <p className="text-sm text-muted-foreground">
-                          Your soil analysis reports will appear here
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-            </Tabs>
-          </section>
+            <TabsContent value="results" className="pt-6">
+              <Card className="p-6 text-center">
+                <PieChart className="mx-auto h-12 w-12 text-muted-foreground" />
+                <h3 className="mt-4 text-xl font-semibold">No Results Yet</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Submit soil data to see analysis results and personalized recommendations
+                </p>
+              </Card>
+            </TabsContent>
+            
+            <TabsContent value="history" className="pt-6">
+              <Card className="p-6 text-center">
+                <History className="mx-auto h-12 w-12 text-muted-foreground" />
+                <h3 className="mt-4 text-xl font-semibold">No Analysis History</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Your past soil analysis results will appear here once you've completed tests
+                </p>
+              </Card>
+            </TabsContent>
+          </Tabs>
         </div>
       </main>
     </div>
